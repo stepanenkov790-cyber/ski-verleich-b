@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ski-Verleih</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><strong>Ski-Verleih</strong><nav><a href="#dashboard">Dashboard</a><a href="#skis">Ski-Verwaltung</a><a href="#persons">Personen</a><a href="#reservations">Reservierungen</a></nav></header>
+<main>
+<section id="dashboard"><h1>Dashboard</h1><div class="cards">
+<div class="card purple"><span>Verfügbare Ski</span><b id="available">0</b></div>
+<div class="card pink"><span>Ausgeliehene Ski</span><b id="rented">0</b></div>
+<div class="card blue"><span>Gesamt Ski</span><b id="total">0</b></div>
+<div class="card green"><span>Registrierte Personen</span><b id="people">0</b></div>
+</div><h3>Schnellzugriff</h3><div class="actions"><a class="button" href="#skis">Ski verwalten</a><a class="button" href="#persons">Personen verwalten</a><a class="button success" href="#loans">Neue Ausleihe</a></div></section>
+<section id="skis"><h2>Ski-Verwaltung</h2><form id="skiForm"><input name="name" placeholder="Name des Skis" required><input name="category" placeholder="Kategorie" required><input name="size" type="number" placeholder="Größe (cm)" required><input name="dailyPrice" type="number" min="0.01" step="0.01" placeholder="Preis pro Tag (€)" required><button>+ Ski hinzufügen</button></form><div id="skiList"></div></section>
+<section id="persons"><h2>Personen</h2><form id="personForm"><input name="name" placeholder="Name" required><input name="email" type="email" placeholder="E-Mail" required><button>+ Person hinzufügen</button></form><div id="personList"></div></section>
+<section id="loans"><h2>Neue Ausleihe</h2><form id="loanForm"><select name="skiId" id="skiSelect" required></select><select name="personId" id="personSelect" required></select><input name="date" type="date" required><input name="days" type="number" min="1" max="365" value="1" placeholder="Mietdauer (Tage)" required><button>Ausleihe speichern</button></form><div id="loanList"></div></section>
+<section id="reservations"><h2>Reservierungen</h2><form id="reservationForm"><select name="skiId" id="reserveSki" required></select><select name="personId" id="reservePerson" required></select><input name="date" type="date" required><button>Reservierung erstellen</button></form><div id="reservationList"></div></section>
+</main><script src="app.js"></script>
+</body></html>
